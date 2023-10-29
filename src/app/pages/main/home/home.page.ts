@@ -71,8 +71,9 @@ ionViewWillEnter() {
   }
 
 
+
   // ========Agregar o actualizar receta=======
-async  addUpdateRecipes(recipe?: Recipe){
+async addUpdateRecipes(recipe?: Recipe){
 
    let succes = await this.utilsSvc.presentModal({
     component: AddUpdateRecipesComponent,
@@ -100,7 +101,7 @@ async deleteRecipe(recipe: Recipe) {
     this.recipes = this.recipes.filter(r => r.id !== recipe.id);
 
     this.utilsSvc.presentToast({
-      message: 'Receta eliminado exitosamente',
+      message: 'Receta eliminada exitosamente',
       duration: 1200,
       color: 'succes',
       position: 'middle',

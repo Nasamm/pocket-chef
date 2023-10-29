@@ -4,6 +4,7 @@ import { Recipe } from 'src/app/models/recipes.model';
 import { User } from 'src/app/models/user.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-add-update-recipes',
@@ -15,7 +16,7 @@ export class AddUpdateRecipesComponent implements OnInit {
   @Input() recipe: Recipe;
 
   form = new FormGroup({
-    id: new FormControl(''),
+    id: new FormControl(uuidv4()),
     image: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     ingredientes: new FormControl('', [Validators.required, Validators.minLength(4)]),
@@ -34,8 +35,6 @@ export class AddUpdateRecipesComponent implements OnInit {
     if (this.recipe) this.form.setValue(this.recipe);
   }
 
-
-
   // ==========Tomar o seleccionar foto============
   async takeImage() {
     const dataUrl = (await this.utilsSvc.takePicture('Imagen de la receta')).dataUrl;
@@ -50,6 +49,8 @@ export class AddUpdateRecipesComponent implements OnInit {
   }
 
   // =============Crear receta===========
+  
+  
   async createRecipe() {
 
     let path = `users/${this.user.uid}/recipes`
@@ -58,8 +59,9 @@ export class AddUpdateRecipesComponent implements OnInit {
     await loading.present();
 
     // ==========Subir la imagen y obtener la url============ 
+
     let dataUrl = this.form.value.image;
-    let imagePath = `${this.user.uid}/${Date.now}`;
+    let imagePath = `${this.user.uid}/${this.form.value.id}`;
     let imageUrl = await this.firebaseSvc.uploadImage(imagePath, dataUrl);
     this.form.controls.image.setValue(imageUrl);
 
@@ -99,6 +101,7 @@ export class AddUpdateRecipesComponent implements OnInit {
   // =============Actualizar receta===========
   async updateRecipe() {
 
+
     let path = `users/${this.user.uid}/recipes/${this.recipe.id}`
 
     const loading = await this.utilsSvc.loading();
@@ -120,7 +123,7 @@ export class AddUpdateRecipesComponent implements OnInit {
       this.utilsSvc.dismissModal({ succes: true });
 
       this.utilsSvc.presentToast({
-        message: 'Receta actualizado exitosamente',
+        message: 'Receta actualizada exitosamente',
         duration: 1200,
         color: 'succes',
         position: 'middle',

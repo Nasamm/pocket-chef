@@ -26,6 +26,7 @@ export class ProfilePage implements OnInit {
   async takeImage(){
 
     let user = this.user();
+    
 
     const dataUrl = (await this.utilsSvc.takePicture('Imagen del perfil')).dataUrl;
 

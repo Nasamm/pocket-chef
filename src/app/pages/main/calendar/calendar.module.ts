@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RecetasPageRoutingModule } from './recetas-routing.module';
+import { CalendarPageRoutingModule } from './calendar-routing.module';
 
-import { RecetasPage } from './recetas.page';
+import { CalendarPage } from './calendar.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    RecetasPageRoutingModule,
+    CalendarPageRoutingModule,
     SharedModule
   ],
-  declarations: [RecetasPage]
+  declarations: [CalendarPage]
 })
-export class RecetasPageModule {}
+export class CalendarPageModule {}

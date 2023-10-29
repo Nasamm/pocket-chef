@@ -61,6 +61,7 @@ export class FirebaseService {
     return collectionData(query(ref, collectionQuery), {idField: 'id'});
   }
 
+  
   // ========setear un documento=======
 
   setDocument(path: string, data: any) {
