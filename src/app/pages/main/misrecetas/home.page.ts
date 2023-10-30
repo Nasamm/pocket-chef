@@ -1,9 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { User } from 'firebase/auth';
-import { Recipe } from 'src/app/models/recipes.model';
-import { FirebaseService } from 'src/app/services/firebase.service';
-import { UtilsService } from 'src/app/services/utils.service';
-import { AddUpdateRecipesComponent } from 'src/app/shared/components/add-update-recipes/add-update-recipes.component';
+import { Recipe } from 'src/app/modelos/recipes.model';
+import { FirebaseService } from 'src/app/servicios/firebase.service';
+import { UtilsService } from 'src/app/servicios/utils.service';
+import { AddUpdateRecipesComponent } from 'src/app/shared/components/crud-recipes/add-update-recipes.component';
 
 @Component({
   selector: 'app-home',

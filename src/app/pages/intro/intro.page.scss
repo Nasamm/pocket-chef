@@ -1,6 +1,6 @@
 .glass-content{
 /* From https://css.glass */
-background: rgba(98, 113, 241, 0.4);
+background: rgba(31, 32, 37, 0.4);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(9.7px);
@@ -11,6 +11,7 @@ min-height: 100vh;
 }
 
 h1{
+  color: beige;
     font-size: large;
     padding-top: 30vh ;
     width: 100%;

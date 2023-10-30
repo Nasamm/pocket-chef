@@ -10,11 +10,11 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+        loadChildren: () => import('./misrecetas/home.module').then( m => m.HomePageModule)
       },
       {
         path: 'profile',
-        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+        loadChildren: () => import('./perfil/profile.module').then( m => m.ProfilePageModule)
       },
       {
         path: 'recetas',
@@ -22,7 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'calendar',
-        loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+        loadChildren: () => import('./calendario/calendar.module').then( m => m.CalendarPageModule)
       },
 
     ]

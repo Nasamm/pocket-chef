@@ -3,7 +3,7 @@
 
         <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" (keypress.enter)="submit()">
 
-            <!-- // ==========Tomar o seleccionar foto============ -->
+            <!-- // ==========Tomar foto============ -->
             <ion-avatar *ngIf="form.value.image">
                 <img [src]="form.value.image" />
             </ion-avatar>
@@ -13,7 +13,7 @@
             
             <br>
 
-            <ion-button (click)="takeImage()" size="small" mode="ios" shape="round">
+            <ion-button color="medium" (click)="takeImage()" size="small" mode="ios" shape="round">
                 Tomar/Seleccionar
             </ion-button>
 
@@ -44,10 +44,7 @@
                 </div>
             </div>
 
-
-            
-
-            <ion-button mode="ios" class="ion-margin" type="submit" [disabled]="form.invalid">
+            <ion-button color="dark" mode="ios" class="ion-margin" type="submit" [disabled]="form.invalid">
                 {{recipe ? 'Actualizar Receta' : 'Agregar Receta' }}
                 <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
             </ion-button>

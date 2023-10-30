@@ -29,7 +29,7 @@ async takePicture (promptLabelHeader: string) {
   
   }
 
-   // =========Alert============
+   // =========Alerts============
 async presentAlert(opts?: AlertOptions) {
   const alert = await this.alertCtrl.create(opts);
 
@@ -52,7 +52,7 @@ async presentAlert(opts?: AlertOptions) {
 
 
 
-  // ==========Enruta a cualquier pagina disponible========
+  // ==========Enrutar a cualquier pagina disponible========
   routerLink(url: string) {
     return this.router.navigateByUrl(url);
   }

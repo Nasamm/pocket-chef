@@ -1,11 +1,11 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
 
     <ion-buttons slot="start">
-      <!-- =======BackButton======= -->
+      <!-- =======Boton volver atras======= -->
       <ion-back-button *ngIf="backButton" [defaultHref]="backButton"></ion-back-button>
 
-      <!-- =======BackButton======= -->
+      <!-- =======Boton volver atras======= -->
       <ion-button (click)="dismissModal()" *ngIf="isModal">
         <ion-icon name="close-circle-outline"></ion-icon>
       </ion-button>
@@ -13,8 +13,6 @@
       <ion-menu-button *ngIf="showMenu" menu="menu-content"></ion-menu-button>
     </ion-buttons>
 
-      
- 
     <ion-title>
       <strong>{{title}}</strong>
       <div class="PocketChef">PocketChef</div>

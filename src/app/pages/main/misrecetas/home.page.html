@@ -23,7 +23,7 @@
       <ion-item-options class="option-btn">
 
         <!-- ==============Editar=============== -->
-        <ion-item-option (click)="addUpdateRecipes(r)">
+        <ion-item-option color="dark" (click)="addUpdateRecipes(r)">
           <ion-icon class="option-btn" name="create-outline"></ion-icon>
         </ion-item-option>
   
@@ -41,7 +41,7 @@
 
   <!-- ======= Nueva receta ========== -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="addUpdateRecipes()">
+    <ion-fab-button (click)="addUpdateRecipes()" color="dark">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { FirebaseService } from '../services/firebase.service';
-import { UtilsService } from '../services/utils.service';
+import { FirebaseService } from '../servicios/firebase.service';
+import { UtilsService } from '../servicios/utils.service';
 
 @Injectable({
   providedIn: 'root'

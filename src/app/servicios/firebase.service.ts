@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, sendPasswordResetEmail } from 'firebase/auth';
-import { User } from '../models/user.model';
+import { User } from '../modelos/user.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { getFirestore, setDoc, doc, getDoc, addDoc, collection, collectionData, query , updateDoc , deleteDoc} from '@angular/fire/firestore';
 import { UtilsService } from './utils.service';
@@ -31,7 +31,7 @@ export class FirebaseService {
     return signInWithEmailAndPassword(getAuth(), user.email, user.password);
   }
 
-  // ========Crear user========
+  // ========Crear usuario========
   signUp(user: User) {
     return createUserWithEmailAndPassword(getAuth(), user.email, user.password);
   }
@@ -47,14 +47,7 @@ export class FirebaseService {
     return sendPasswordResetEmail(getAuth(), email);
   }
 
-  // ========Cerrar Sesión=======
-  signOut() {
-    getAuth().signOut();
-    localStorage.removeItem('user');
-    this.utilsSvc.routerLink('/auth');
-  }
-
-  // =======================BD=============================
+// =======================BD=============================
   // ================Obtener los documentos de una coleccion ============
   getCollectionData(path: string, collectionQuery?: any){
     const ref = collection(getFirestore(), path);
@@ -62,7 +55,7 @@ export class FirebaseService {
   }
 
   
-  // ========setear un documento=======
+  // ========cambiar un documento=======
 
   setDocument(path: string, data: any) {
     return setDoc(doc(getFirestore(), path), data);
@@ -94,8 +87,12 @@ deleteDocument(path: string) {
   }
 
 
-  // ========Almacenamiento=======
-
+  // ========Cerrar Sesión=======
+  signOut() {
+    getAuth().signOut();
+    localStorage.removeItem('user');
+    this.utilsSvc.routerLink('/auth');
+  }
 
 
   // ========Subir Imagen=======

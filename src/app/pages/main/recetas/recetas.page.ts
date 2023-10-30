@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RecipesService } from 'src/app/services/recipes.service';
+import { RecipesService } from 'src/app/servicios/recipes.service';
 
 
 interface Recipes {
